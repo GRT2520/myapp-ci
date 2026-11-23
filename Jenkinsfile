@@ -29,7 +29,7 @@ pipeline {
       steps {
         sshagent(credentials: ['ec2-ssh']) {
           sh '''
-            ssh -o StrictHostKeyChecking=no ubuntu@34.224.165.116 "
+            ssh -o StrictHostKeyChecking=no ubuntu@54.82.12.115"
               docker pull $IMAGE:${BUILD_NUMBER} &&
               (docker rm -f myapp || true) &&
               docker run -d --name myapp -p 80:3000 --restart unless-stopped $IMAGE:${BUILD_NUMBER}
